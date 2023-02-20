@@ -49,6 +49,7 @@ confirmLabel.grid(row=5,column=0,sticky='w',padx=25)
 confirmEntry = Entry(frames,width=30,font=('Bebas',20),fg='gold',bg='gray1')
 confirmEntry.grid(row=6,column=0,sticky='w',padx=25)
 
+# GOOD
 # Email
 emailLabel = Label(frames,text='Email',font = ('Bebas',15),fg='gray1')
 emailLabel.grid(row=7,column=0,sticky='w',padx=25)
