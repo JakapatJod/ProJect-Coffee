@@ -1,4 +1,54 @@
 from tkinter import *
+# Functions Cost
+def Total_Cost():
+    # Coffee Menu
+    item1 = int(e_esp1.get())
+    item2 = int(e_esp2.get())
+    item3 = int(e_cap1.get())
+    item4 = int(e_cap2.get())
+    item5 = int(e_lat1.get())
+    item6 = int(e_lat2.get())
+    item7 = int(e_moc1.get())
+    item8 = int(e_moc2.get())
+    item9 = int(e_ame1.get())
+    item10 = int(e_ame2.get())
+    item11 = int(e_mac1.get())
+    item12 = int(e_mac2.get())
+
+    # Tea Menu
+    item13 = int(e_green1.get())
+    item14 = int(e_green2.get())
+    item15 = int(e_black1.get())
+    item16 = int(e_black2.get())
+    item17 = int(e_choco1.get())
+    item18 = int(e_choco2.get())
+    item19 = int(e_white1.get())
+    item20 = int(e_white2.get())
+    item21 = int(e_milk1.get())
+    item22 = int(e_milk2.get())
+    item23 = int(e_thai1.get())
+    item24 = int(e_thai2.get())
+
+    # Dessert Menu
+    item25 = int(e_cup.get())
+    item26 = int(e_donut.get())
+    item27 = int(e_chee.get())
+    item28 = int(e_pud.get())
+    item29 = int(e_waf.get())
+    item30 = int(e_cake.get())
+
+    priceofcoffee = (item1*35) + (item2*55) + (item3*45) + (item4*60) + (item5*50) + (item6*65) + (item7*50) + (item8*65) \
+                    + (item9*35) + (item10*55) + (item11*60) + (item12*70)
+
+    priceoftea =  (item13*40) + (item14*45) + (item15*50) + (item16*60) + (item17*40) + (item18*45) + (item19*50) + (item20*60) \
+                    + (item21*40) + (item22*45) + (item23*45) + (item24*55)
+
+    priceofdessert = (item25*65) + (item26*40) + (item27*85) + (item28*90) + (item29*75) + (item30*80)
+
+    costofcoffeevar.set(str(priceofcoffee)+'Bath')
+    costofteavar.set(str(priceoftea)+'Bath')
+    costofdessertvar.set(str(priceofdessert)+'Bath')
+
 # Functions Coffee
 
 def Espresso():
@@ -28,13 +78,239 @@ def Cappucino():
         e_cap1.set('0')
     
     if var2.get()==1:
-        textcappucino.config(state=NORMAL)
+        textcappucino2.config(state=NORMAL)
         textcappucino2.delete(0,END)
         textcappucino2.focus()
     else:
         textcappucino2.config(state=DISABLED)
         e_cap2.set('0')
+
+def Latte():
+    if var3.get()==1:
+        textlatte.config(state=NORMAL)
+        textlatte.delete(0,END)
+        textlatte.focus()
+    else:
+        textlatte.config(state=DISABLED)
+        e_lat1.set('0')
     
+    if var3.get()==1:
+        textlatte2.config(state=NORMAL)
+        textlatte2.delete(0,END)
+        textlatte2.focus()
+    else:
+        textlatte2.config(state=DISABLED)
+        e_lat2.set('0')
+
+def Mocha():
+    if var4.get()==1:
+        textmocha.config(state=NORMAL)
+        textmocha.delete(0,END)
+        textmocha.focus()
+    else:
+        textmocha.config(state=DISABLED)
+        e_moc1.set('0')
+    
+    if var4.get()==1:
+        textmocha2.config(state=NORMAL)
+        textmocha2.delete(0,END)
+        textmocha2.focus()
+    else:
+        textmocha2.config(state=DISABLED)
+        e_moc2.set('0')
+
+def Americano():
+    if var5.get()==1:
+        textamericano.config(state=NORMAL)
+        textamericano.delete(0,END)
+        textamericano.focus()
+    else:
+        textamericano.config(state=DISABLED)
+        e_ame1.set('0')
+    
+    if var5.get()==1:
+        textamericano2.config(state=NORMAL)
+        textamericano2.delete(0,END)
+        textamericano2.focus()
+    else:
+        textamericano2.config(state=DISABLED)
+        e_ame2.set('0')
+
+def Macchiato():
+    if var6.get()==1:
+        textmacchiato.config(state=NORMAL)
+        textmacchiato.delete(0,END)
+        textmacchiato.focus()
+    else:
+        textmacchiato.config(state=DISABLED)
+        e_mac1.set('0')
+    
+    if var6.get()==1:
+        textmacchiato2.config(state=NORMAL)
+        textmacchiato2.delete(0,END)
+        textmacchiato2.focus()
+    else:
+        textmacchiato2.config(state=DISABLED)
+        e_mac2.set('0')
+
+# Functions Tea
+def GreenTea():
+    if var7.get()==1:
+        textgreen.config(state=NORMAL)
+        textgreen.delete(0,END)
+        textgreen.focus()
+    else:
+        textgreen.config(state=DISABLED)
+        e_green1.set('0')
+    
+    if var7.get()==1:
+        textgreen2.config(state=NORMAL)
+        textgreen2.delete(0,END)
+        textgreen2.focus()
+    else:
+        textgreen2.config(state=DISABLED)
+        e_green2.set('0')
+
+def BlackTea():
+    if var8.get()==1:
+        textblack.config(state=NORMAL)
+        textblack.delete(0,END)
+        textblack.focus()
+    else:
+        textblack.config(state=DISABLED)
+        e_black1.set('0')
+    
+    if var8.get()==1:
+        textblack2.config(state=NORMAL)
+        textblack2.delete(0,END)
+        textblack2.focus()
+    else:
+        textblack2.config(state=DISABLED)
+        e_black2.set('0')
+
+def Chocolate():
+    if var9.get()==1:
+        textchoco.config(state=NORMAL)
+        textchoco.delete(0,END)
+        textchoco.focus()
+    else:
+        textchoco.config(state=DISABLED)
+        e_choco1.set('0')
+    
+    if var9.get()==1:
+        textchoco2.config(state=NORMAL)
+        textchoco2.delete(0,END)
+        textchoco2.focus()
+    else:
+        textblack2.config(state=DISABLED)
+        e_choco1.set('0')
+
+def WhiteChocolate():
+    if var10.get()==1:
+        textwhite.config(state=NORMAL)
+        textwhite.delete(0,END)
+        textwhite.focus()
+    else:
+        textwhite.config(state=DISABLED)
+        e_white1.set('0')
+    
+    if var10.get()==1:
+        textwhite2.config(state=NORMAL)
+        textwhite2.delete(0,END)
+        textwhite2.focus()
+    else:
+        textwhite2.config(state=DISABLED)
+        e_white2.set('0')
+
+def Milk():
+    if var11.get()==1:
+        textmilk.config(state=NORMAL)
+        textmilk.delete(0,END)
+        textmilk.focus()
+    else:
+        textmilk.config(state=DISABLED)
+        e_milk1.set('0')
+    
+    if var11.get()==1:
+        textmilk2.config(state=NORMAL)
+        textmilk2.delete(0,END)
+        textmilk2.focus()
+    else:
+        textmilk2.config(state=DISABLED)
+        e_milk2.set('0')
+
+def ThaiTea():
+    if var12.get()==1:
+        textthai.config(state=NORMAL)
+        textthai.delete(0,END)
+        textthai.focus()
+    else:
+        textthai.config(state=DISABLED)
+        e_thai1.set('0')
+    
+    if var12.get()==1:
+        textthai2.config(state=NORMAL)
+        textthai2.delete(0,END)
+        textthai2.focus()
+    else:
+        textthai2.config(state=DISABLED)
+        e_thai2.set('0')
+
+# Functions Dessert
+def Cupcake():
+    if var13.get()==1:
+        textcupcake.config(state=NORMAL)
+        textcupcake.delete(0,END)
+        textcupcake.focus()
+    else:
+        textcupcake.config(state=DISABLED)
+        e_cup.set('0')
+
+def Donut():
+    if var14.get()==1:
+        textdonut.config(state=NORMAL)
+        textdonut.delete(0,END)
+        textdonut.focus()
+    else:
+        textdonut.config(state=DISABLED)
+        e_donut.set('0')
+
+def Cheesecake():
+    if var15.get()==1:
+        textcheesecake.config(state=NORMAL)
+        textcheesecake.delete(0,END)
+        textcheesecake.focus()
+    else:
+        textcheesecake.config(state=DISABLED)
+        e_chee.set('0')
+
+def Pudding():
+    if var16.get()==1:
+        textpudding.config(state=NORMAL)
+        textpudding.delete(0,END)
+        textpudding.focus()
+    else:
+        textpudding.config(state=DISABLED)
+        e_pud.set('0')
+
+def Waffle():
+    if var17.get()==1:
+        textwaffle.config(state=NORMAL)
+        textwaffle.delete(0,END)
+        textwaffle.focus()
+    else:
+        textwaffle.config(state=DISABLED)
+        e_waf.set('0')
+
+def Cake():
+    if var18.get()==1:
+        textcake.config(state=NORMAL)
+        textcake.delete(0,END)
+        textcake.focus()
+    else:
+        textcake.config(state=DISABLED)
+        e_cake.set('0')
+
 root = Tk()
 
 root.geometry('1280x780+0+0')
@@ -210,16 +486,20 @@ cappucino = Checkbutton(coffeeFrame,text='Cappucino',font=('Bebas Neue',20),onva
             ,command=Cappucino)
 cappucino.grid(row=1,column=0)
 
-latte = Checkbutton(coffeeFrame,text='Latte',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var3,bg='gold',fg='black')
+latte = Checkbutton(coffeeFrame,text='Latte',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var3,bg='gold',fg='black'
+            ,command=Latte)
 latte.grid(row=2,column=0)
 
-mocha = Checkbutton(coffeeFrame,text='Mocha',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var4,bg='gold',fg='black')
+mocha = Checkbutton(coffeeFrame,text='Mocha',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var4,bg='gold',fg='black'
+            ,command=Mocha)
 mocha.grid(row=3,column=0)
 
-americano = Checkbutton(coffeeFrame,text='Americano',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var5,bg='gold',fg='black')
+americano = Checkbutton(coffeeFrame,text='Americano',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var5,bg='gold',fg='black'
+            ,command=Americano)
 americano.grid(row=4,column=0)
 
-macchiato = Checkbutton(coffeeFrame,text='Macchiato',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var6,bg='gold',fg='black')
+macchiato = Checkbutton(coffeeFrame,text='Macchiato',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var6,bg='gold',fg='black'
+            ,command=Macchiato)
 macchiato.grid(row=5,column=0)
 
 # Entry Fields for Coffee Items
@@ -261,22 +541,28 @@ textmacchiato2.grid(row=5,column=2)
 
 # -----------------------------------------------------------------------------------------
 # Tea
-greentea = Checkbutton(teaFrame,text='Green tea',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var7,bg='black',fg='Red')
+greentea = Checkbutton(teaFrame,text='Green tea',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var7,bg='black',fg='Red',
+            command=GreenTea)
 greentea.grid(row=0,column=0)
 
-blacktea = Checkbutton(teaFrame,text='Black tea',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var8,bg='black',fg='Red')
+blacktea = Checkbutton(teaFrame,text='Black tea',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var8,bg='black',fg='Red',
+            command=BlackTea)
 blacktea.grid(row=1,column=0)
 
-chocolate = Checkbutton(teaFrame,text='Chocolate',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var9,bg='black',fg='Red')
+chocolate = Checkbutton(teaFrame,text='Chocolate',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var9,bg='black',fg='Red',
+            command=Chocolate)
 chocolate.grid(row=2,column=0)
 
-whitechocolate = Checkbutton(teaFrame,text='White Chocolate',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var10,bg='black',fg='Red')
+whitechocolate = Checkbutton(teaFrame,text='White Chocolate',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var10,bg='black',fg='Red',
+            command=WhiteChocolate)
 whitechocolate.grid(row=3,column=0)
 
-milk = Checkbutton(teaFrame,text='Milk',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var11,bg='black',fg='Red')
+milk = Checkbutton(teaFrame,text='Milk',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var11,bg='black',fg='Red',
+            command=Milk)
 milk.grid(row=4,column=0)
 
-thaitea = Checkbutton(teaFrame,text='Thai Tea',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var12,bg='black',fg='Red')
+thaitea = Checkbutton(teaFrame,text='Thai Tea',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var12,bg='black',fg='Red',
+            command=ThaiTea)
 thaitea.grid(row=5,column=0)
 
 # Entry Fields for Coffee Items
@@ -318,22 +604,28 @@ textthai2.grid(row=5,column=2)
 
 # -----------------------------------------------------------------------------------------
 # Dessert
-cupcake = Checkbutton(dessertFrame,text='Cupcake',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var13,bg='sandy brown',fg='black')
+cupcake = Checkbutton(dessertFrame,text='Cupcake',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var13,bg='sandy brown',fg='black',
+            command=Cupcake)
 cupcake.grid(row=0,column=0)
 
-dounut = Checkbutton(dessertFrame,text='Dounut',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var14,bg='sandy brown',fg='black')
+dounut = Checkbutton(dessertFrame,text='Dounut',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var14,bg='sandy brown',fg='black',
+            command=Donut)
 dounut.grid(row=1,column=0)
 
-cheesecake = Checkbutton(dessertFrame,text='Cheesecake',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var15,bg='sandy brown',fg='black')
+cheesecake = Checkbutton(dessertFrame,text='Cheesecake',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var15,bg='sandy brown',fg='black',
+            command=Cheesecake)
 cheesecake.grid(row=2,column=0)
 
-pudding = Checkbutton(dessertFrame,text='Pudding',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var16,bg='sandy brown',fg='black')
+pudding = Checkbutton(dessertFrame,text='Pudding',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var16,bg='sandy brown',fg='black',
+            command=Pudding)
 pudding.grid(row=3,column=0)
 
-waffle = Checkbutton(dessertFrame,text='Waffle',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var17,bg='sandy brown',fg='black')
+waffle = Checkbutton(dessertFrame,text='Waffle',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var17,bg='sandy brown',fg='black',
+            command=Waffle)
 waffle.grid(row=4,column=0)
 
-cake = Checkbutton(dessertFrame,text='Cake',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var18,bg='sandy brown',fg='black')
+cake = Checkbutton(dessertFrame,text='Cake',font=('Bebas Neue',20),onvalue=1,offvalue=0,variable=var18,bg='sandy brown',fg='black',
+            command=Cake)
 cake.grid(row=5,column=0)
 
 # Entry Fields for Coffee Items
@@ -396,7 +688,8 @@ textTotalcost.grid(row=2,column=3 ,padx=54)
 # -----------------------------------------------------------------------------------------
 # Button
 
-buttonTotal = Button(buttonFrame,text='Total',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
+buttonTotal = Button(buttonFrame,text='Total',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5
+            ,command=Total_Cost)
 buttonTotal.grid(row=0,column=0)
 
 buttonRecipt = Button(buttonFrame,text='Receipt',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
