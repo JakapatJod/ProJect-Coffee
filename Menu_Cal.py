@@ -1,4 +1,8 @@
 from tkinter import *
+# Function Receipt
+# def receipt():
+
+
 # Functions Cost
 def Total_Cost():
     # Coffee Menu
@@ -45,9 +49,17 @@ def Total_Cost():
 
     priceofdessert = (item25*65) + (item26*40) + (item27*85) + (item28*90) + (item29*75) + (item30*80)
 
-    costofcoffeevar.set(str(priceofcoffee)+'Bath')
-    costofteavar.set(str(priceoftea)+'Bath')
-    costofdessertvar.set(str(priceofdessert)+'Bath')
+    costofcoffeevar.set(str(priceofcoffee)+' Bath')
+    costofteavar.set(str(priceoftea)+' Bath')
+    costofdessertvar.set(str(priceofdessert)+' Bath')
+
+    subtotalItem = priceofcoffee + priceoftea + priceofdessert
+    subtotalvar.set(str(subtotalItem) +' Bath')
+
+    servicetaxvar.set('5 Bath')
+
+    totalcost = subtotalItem + 5
+    totalcostvar.set(str(totalcost)+' Bath')
 
 # Functions Coffee
 
