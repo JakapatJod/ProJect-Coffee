@@ -1,7 +1,6 @@
 from tkinter import *
-# Function Receipt
-# def receipt():
-
+import random
+import time
 
 # Functions Cost
 def Total_Cost():
@@ -697,6 +696,28 @@ labelTotalcost.grid(row=2,column=2)
 textTotalcost = Entry(costFrame,font=('Bebas Neue',20),bd=6,width=14,state='readonly',textvariable=totalcostvar)
 textTotalcost.grid(row=2,column=3 ,padx=54)
 
+#-------------------------------------------------------------------------------------------
+
+# Text area receipt
+textReceipt = Text(recieptFrame,font=('Bebas Neue',15),bd=3,width=42,height=10)
+textReceipt.grid(row=0,column=0)
+
+# Function Receipt
+def receipt():
+    x = random.randint(100,1000)
+    billnumber = 'BILL' + str(x)
+    date = time.strftime('%d/%m/%Y')
+    textReceipt.insert(END,'Receipt Ref:\t\t'+billnumber+'\t\t'+date+'\n')
+    textReceipt.insert(END,'*'*42)
+    textReceipt.insert(END,'\nItems:\t\t\t Cost of Items(Bath)\n')
+    textReceipt.insert(END,'*'*42)
+    
+    if e_esp1.get()!='0':
+        textReceipt.insert(END,f'Espresso\t\t\t{int(e_esp1.get())*60}\n\n')
+
+
+
+
 # -----------------------------------------------------------------------------------------
 # Button
 
@@ -704,7 +725,8 @@ buttonTotal = Button(buttonFrame,text='Total',font=('Bebas Neue',15,'bold'),bg='
             ,command=Total_Cost)
 buttonTotal.grid(row=0,column=0)
 
-buttonRecipt = Button(buttonFrame,text='Receipt',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
+buttonRecipt = Button(buttonFrame,text='Receipt',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5 
+            ,command=receipt)
 buttonRecipt.grid(row=0,column=1)
 
 buttonSave = Button(buttonFrame,text='Save',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
@@ -720,9 +742,6 @@ buttonLogout = Button(buttonFrame,text='Logout',font=('Bebas Neue',15,'bold'),bg
 buttonLogout.grid(row=0,column=5)
 
 # -----------------------------------------------------------------------------------------
-# Text area receipt
-textReceipt = Text(recieptFrame,font=('Bebas Neue',18),bd=3,width=42,height=10)
-textReceipt.grid(row=0,column=0)
 
 # -----------------------------------------------------------------------------------------
 # Calculator
