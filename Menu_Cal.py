@@ -1,64 +1,192 @@
 from tkinter import *
+from tkinter import filedialog , messagebox
 import random
 import time
 
+# Functions Save
+def reset():
+    
+
+    textReceipt.delete(1.0,END)
+    e_esp1.set('0')
+    e_esp2.set('0')
+
+    e_cap1.set('0')
+    e_cap2.set('0')
+
+    e_lat1.set('0')
+    e_lat2.set('0')
+
+    e_moc1.set('0')
+    e_moc2.set('0')
+
+    e_ame1.set('0')
+    e_ame2.set('0')
+
+    e_mac1.set('0')
+    e_mac2.set('0')
+
+    e_green1.set('0')
+    e_green2.set('0')
+
+    e_black1.set('0')
+    e_black2.set('0')
+
+    e_choco1.set('0')
+    e_choco2.set('0')
+
+    e_white1.set('0')
+    e_white2.set('0')
+
+    e_milk1.set('0')
+    e_milk2.set('0')
+
+    e_thai1.set('0')
+    e_thai2.set('0')
+
+    e_cup.set('0')
+    e_donut.set('0')
+    e_chee.set('0')
+    e_pud.set('0')
+    e_waf.set('0')
+    e_cake.set('0')
+
+    textespresso.config(state=DISABLED)
+    textespresso2.config(state=DISABLED)
+    textcappucino.config(state=DISABLED)
+    textcappucino2.config(state=DISABLED)
+    textlatte.config(state=DISABLED)
+    textlatte2.config(state=DISABLED)
+    textmocha.config(state=DISABLED)
+    textmocha2.config(state=DISABLED)
+    textamericano.config(state=DISABLED)
+    textamericano2.config(state=DISABLED)
+    textmacchiato.config(state=DISABLED)
+    textmacchiato2.config(state=DISABLED)
+    
+    textgreen.config(state=DISABLED)
+    textgreen2.config(state=DISABLED)
+    textblack.config(state=DISABLED)
+    textblack2.config(state=DISABLED)
+    textchoco.config(state=DISABLED)
+    textchoco2.config(state=DISABLED)
+    textwhite.config(state=DISABLED)
+    textwhite2.config(state=DISABLED)
+    textmilk.config(state=DISABLED)
+    textmilk2.config(state=DISABLED)
+    textthai.config(state=DISABLED)
+    textthai2.config(state=DISABLED)
+
+    textcupcake.config(state=DISABLED)
+    textdonut.config(state=DISABLED)
+    textcheesecake.config(state=DISABLED)
+    textpudding.config(state=DISABLED)
+    textwaffle.config(state=DISABLED)
+    textcake.config(state=DISABLED)
+
+    var1.set(0)
+    var2.set(0)
+    var3.set(0)
+    var4.set(0)
+    var5.set(0)
+    var6.set(0)
+    var7.set(0)
+    var8.set(0)
+    var9.set(0)
+    var10.set(0)
+    var11.set(0)
+    var12.set(0)
+    var13.set(0)
+    var14.set(0)
+    var15.set(0)
+    var16.set(0)
+    var17.set(0)
+    var18.set(0)
+
+    costofcoffeevar.set('')
+    costofteavar.set('')
+    costofdessertvar.set('')
+    subtotalvar.set('')
+    servicetaxvar.set('')
+    totalcostvar.set('')
+
+# Functions Save
+def save():
+    if textReceipt.get(1.0,END) == '\n':
+        pass
+    else:
+        url = filedialog.asksaveasfile(mode='w',defaultextension='.txt')
+        if url==None:
+            pass
+        else:
+            bill_data = textReceipt.get(1.0,END)
+            url.write(bill_data)
+            url.close()
+            messagebox.showinfo('Information','Your bill is succesfully Saved')
+
 # Functions Cost
 def Total_Cost():
-    # Coffee Menu
-    item1 = int(e_esp1.get())
-    item2 = int(e_esp2.get())
-    item3 = int(e_cap1.get())
-    item4 = int(e_cap2.get())
-    item5 = int(e_lat1.get())
-    item6 = int(e_lat2.get())
-    item7 = int(e_moc1.get())
-    item8 = int(e_moc2.get())
-    item9 = int(e_ame1.get())
-    item10 = int(e_ame2.get())
-    item11 = int(e_mac1.get())
-    item12 = int(e_mac2.get())
+    global priceofcoffee,priceoftea,priceofdessert,subtotalItem
+    if var1.get() != 0 or var2.get() != 0 or var3.get() != 0 or var4.get() != 0  or var5.get() != 0 or var6.get()  != 0 or var7.get()  != 0 \
+        or var8.get() != 0 or var9.get()  != 0 or var10.get() != 0  or var11.get() != 0  or var12.get() != 0  or var13.get() != 0  \
+        or var14.get()  != 0 or var15.get() != 0 or var16.get() != 0  or var17.get() != 0  or var18.get() != 0 :
+        # Coffee Menu
+        item1 = int(e_esp1.get())
+        item2 = int(e_esp2.get())
+        item3 = int(e_cap1.get())
+        item4 = int(e_cap2.get())
+        item5 = int(e_lat1.get())
+        item6 = int(e_lat2.get())
+        item7 = int(e_moc1.get())
+        item8 = int(e_moc2.get())
+        item9 = int(e_ame1.get())
+        item10 = int(e_ame2.get())
+        item11 = int(e_mac1.get())
+        item12 = int(e_mac2.get())
 
-    # Tea Menu
-    item13 = int(e_green1.get())
-    item14 = int(e_green2.get())
-    item15 = int(e_black1.get())
-    item16 = int(e_black2.get())
-    item17 = int(e_choco1.get())
-    item18 = int(e_choco2.get())
-    item19 = int(e_white1.get())
-    item20 = int(e_white2.get())
-    item21 = int(e_milk1.get())
-    item22 = int(e_milk2.get())
-    item23 = int(e_thai1.get())
-    item24 = int(e_thai2.get())
+        # Tea Menu
+        item13 = int(e_green1.get())
+        item14 = int(e_green2.get())
+        item15 = int(e_black1.get())
+        item16 = int(e_black2.get())
+        item17 = int(e_choco1.get())
+        item18 = int(e_choco2.get())
+        item19 = int(e_white1.get())
+        item20 = int(e_white2.get())
+        item21 = int(e_milk1.get())
+        item22 = int(e_milk2.get())
+        item23 = int(e_thai1.get())
+        item24 = int(e_thai2.get())
 
-    # Dessert Menu
-    item25 = int(e_cup.get())
-    item26 = int(e_donut.get())
-    item27 = int(e_chee.get())
-    item28 = int(e_pud.get())
-    item29 = int(e_waf.get())
-    item30 = int(e_cake.get())
+        # Dessert Menu
+        item25 = int(e_cup.get())
+        item26 = int(e_donut.get())
+        item27 = int(e_chee.get())
+        item28 = int(e_pud.get())
+        item29 = int(e_waf.get())
+        item30 = int(e_cake.get())
 
-    priceofcoffee = (item1*35) + (item2*55) + (item3*45) + (item4*60) + (item5*50) + (item6*65) + (item7*50) + (item8*65) \
-                    + (item9*35) + (item10*55) + (item11*60) + (item12*70)
+        priceofcoffee = (item1*35) + (item2*55) + (item3*45) + (item4*60) + (item5*50) + (item6*65) + (item7*50) + (item8*65) \
+                        + (item9*35) + (item10*55) + (item11*60) + (item12*70)
 
-    priceoftea =  (item13*40) + (item14*45) + (item15*50) + (item16*60) + (item17*40) + (item18*45) + (item19*50) + (item20*60) \
-                    + (item21*40) + (item22*45) + (item23*45) + (item24*55)
+        priceoftea =  (item13*40) + (item14*45) + (item15*50) + (item16*60) + (item17*40) + (item18*45) + (item19*50) + (item20*60) \
+                        + (item21*40) + (item22*45) + (item23*45) + (item24*55)
 
-    priceofdessert = (item25*65) + (item26*40) + (item27*85) + (item28*90) + (item29*75) + (item30*80)
+        priceofdessert = (item25*65) + (item26*40) + (item27*85) + (item28*90) + (item29*75) + (item30*80)
 
-    costofcoffeevar.set(str(priceofcoffee)+' Bath')
-    costofteavar.set(str(priceoftea)+' Bath')
-    costofdessertvar.set(str(priceofdessert)+' Bath')
+        costofcoffeevar.set(str(priceofcoffee)+' Bath')
+        costofteavar.set(str(priceoftea)+' Bath')
+        costofdessertvar.set(str(priceofdessert)+' Bath')
 
-    subtotalItem = priceofcoffee + priceoftea + priceofdessert
-    subtotalvar.set(str(subtotalItem) +' Bath')
+        subtotalItem = priceofcoffee + priceoftea + priceofdessert
+        subtotalvar.set(str(subtotalItem) +' Bath')
 
-    servicetaxvar.set('5 Bath')
+        servicetaxvar.set('5 Bath')
 
-    totalcost = subtotalItem + 5
-    totalcostvar.set(str(totalcost)+' Bath')
+        totalcost = subtotalItem + 5
+        totalcostvar.set(str(totalcost)+' Bath')
+    else:
+        messagebox.showerror('Error','No Item is selected')
 
 # Functions Coffee
 
@@ -213,8 +341,8 @@ def Chocolate():
         textchoco2.delete(0,END)
         textchoco2.focus()
     else:
-        textblack2.config(state=DISABLED)
-        e_choco1.set('0')
+        textchoco2.config(state=DISABLED)
+        e_choco2.set('0')
 
 def WhiteChocolate():
     if var10.get()==1:
@@ -344,13 +472,13 @@ menuFrame.pack(side=LEFT)
 costFrame = Frame(menuFrame,bd=4,relief=RIDGE,bg='dark orange')
 costFrame.pack(side=BOTTOM)
 
-coffeeFrame = LabelFrame(menuFrame,text='Coffee\tHOT  COLD',font=('Bebas Neue',20,'bold'),bd=10,relief=RIDGE,bg='gold',fg='black')
+coffeeFrame = LabelFrame(menuFrame,text='Coffee\t         HOT  COLD',font=('Bebas Neue',20,'bold'),bd=5,relief=RIDGE,bg='gold',fg='black')
 coffeeFrame.pack(side=LEFT)
 
-teaFrame = LabelFrame(menuFrame,text='Tea\t        HOT  COLD',font=('Bebas Neue',20,'bold'),bd=10,relief=RIDGE,bg='black',fg='Red')
+teaFrame = LabelFrame(menuFrame,text='Tea\t\t HOT  COLD',font=('Bebas Neue',20,'bold'),bd=5,relief=RIDGE,bg='black',fg='Red')
 teaFrame.pack(side=LEFT)
 
-dessertFrame = LabelFrame(menuFrame,text='Dessert',font=('Bebas Neue',20,'bold'),bd=10,relief=RIDGE,bg='sandy brown',fg='black',padx=8)
+dessertFrame = LabelFrame(menuFrame,text='Dessert',font=('Bebas Neue',20,'bold'),bd=5,relief=RIDGE,bg='sandy brown',fg='black',padx=24)
 dessertFrame.pack(side=LEFT)
 
 rightFrame = Frame(root,bd=15,relief=RIDGE)
@@ -704,18 +832,123 @@ textReceipt.grid(row=0,column=0)
 
 # Function Receipt
 def receipt():
-    x = random.randint(100,1000)
-    billnumber = 'BILL' + str(x)
-    date = time.strftime('%d/%m/%Y')
-    textReceipt.insert(END,'Receipt Ref:\t\t'+billnumber+'\t\t'+date+'\n')
-    textReceipt.insert(END,'*'*42)
-    textReceipt.insert(END,'\nItems:\t\t\t Cost of Items(Bath)\n')
-    textReceipt.insert(END,'*'*42)
-    
-    if e_esp1.get()!='0':
-        textReceipt.insert(END,f'Espresso\t\t\t{int(e_esp1.get())*60}\n\n')
+    if costofcoffeevar.get() != '' or costofteavar.get() != '' or costofdessertvar.get() != '':
+        x = random.randint(100,1000)
+        billnumber = 'BILL' + str(x)
+        date = time.strftime('%d/%m/%Y')
+        textReceipt.insert(END,'Receipt Ref:\t\t'+billnumber+'\t\t'+date+'\n')
+        textReceipt.insert(END,'*'*42)
+        textReceipt.insert(END,'\nItems:\t\t\t Cost of Items(Bath)\n')
+        textReceipt.insert(END,'*'*42)
+        
+        # Coffee
+        if e_esp1.get()!='0':
+            textReceipt.insert(END,f'\nEspresso (HOT)\t\t\t{int(e_esp1.get())*55}\n\n')
+        
+        if e_esp2.get()!='0':
+            textReceipt.insert(END,f'\nEspresso (COLD)\t\t\t{int(e_esp2.get())*35}\n\n')
+        
+        if e_cap1.get()!='0':
+            textReceipt.insert(END,f'\nCappucino (HOT)\t\t\t{int(e_cap1.get())*45}\n\n')
 
+        if e_cap2.get()!='0':
+            textReceipt.insert(END,f'\nCappucino (COLD)\t\t\t{int(e_cap2.get())*60}\n\n')
+        
+        if e_lat1.get()!='0':
+            textReceipt.insert(END,f'\nLatte (HOT)\t\t\t{int(e_lat1.get())*50}\n\n')
+        
+        if e_lat2.get()!='0':
+            textReceipt.insert(END,f'\nLatte (COLD)\t\t\t{int(e_lat2.get())*65}\n\n')
 
+        if e_moc1.get()!='0':
+            textReceipt.insert(END,f'\nMocha (HOT)\t\t\t{int(e_moc1.get())*50}\n\n')
+
+        if e_moc2.get()!='0':
+            textReceipt.insert(END,f'\nMocha (COLD)\t\t\t{int(e_moc2.get())*65}\n\n')
+
+        if e_ame1.get()!='0':
+            textReceipt.insert(END,f'\nAmericano (HOT)\t\t\t{int(e_ame1.get())*35}\n\n')
+
+        if e_ame2.get()!='0':
+            textReceipt.insert(END,f'\nAmericano (COLD)\t\t\t{int(e_ame2.get())*55}\n\n')
+        
+        if e_mac1.get()!='0':
+            textReceipt.insert(END,f'\nMacchiato (HOT)\t\t\t{int(e_mac1.get())*60}\n\n')
+
+        if e_mac2.get()!='0':
+            textReceipt.insert(END,f'\nMacchiato (COLD)\t\t\t{int(e_mac2.get())*70}\n\n')
+        
+        # Tea
+        if e_green1.get()!='0':
+            textReceipt.insert(END,f'\nGreen Tea (HOT)\t\t\t{int(e_green1.get())*40}\n\n')
+        
+        if e_green2.get()!='0':
+            textReceipt.insert(END,f'\nGreen Tea (COLD)\t\t\t{int(e_green2.get())*45}\n\n')
+        
+        if e_black1.get()!='0':
+            textReceipt.insert(END,f'\nBlack Tea (HOT)\t\t\t{int(e_black1.get())*50}\n\n')
+        
+        if e_black2.get()!='0':
+            textReceipt.insert(END,f'\nBlack Tea (COLD)\t\t\t{int(e_black2.get())*60}\n\n')
+        
+        if e_choco1.get()!='0':
+            textReceipt.insert(END,f'\nChocolate (HOT)\t\t\t{int(e_choco1.get())*40}\n\n')
+
+        if e_choco2.get()!='0':
+            textReceipt.insert(END,f'\nChocolate (COLD)\t\t\t{int(e_choco2.get())*45}\n\n')
+        
+        if e_white1.get()!='0':
+            textReceipt.insert(END,f'\nWhite Chocolate (HOT)\t\t\t{int(e_white1.get())*50}\n\n')
+
+        if e_white2.get()!='0':
+            textReceipt.insert(END,f'\nWhite Chocolate (COLD)\t\t\t{int(e_white2.get())*60}\n\n')
+
+        if e_milk1.get()!='0':
+            textReceipt.insert(END,f'\nMilk (HOT)\t\t\t{int(e_milk1.get())*40}\n\n')
+
+        if e_milk2.get()!='0':
+            textReceipt.insert(END,f'\nMilk (COLD)\t\t\t{int(e_milk2.get())*45}\n\n')
+
+        if e_thai1.get()!='0':
+            textReceipt.insert(END,f'\nThai Tea (HOT)\t\t\t{int(e_thai1.get())*45}\n\n')
+
+        if e_thai2.get()!='0':
+            textReceipt.insert(END,f'\nThai Tea (COLD)\t\t\t{int(e_thai2.get())*55}\n\n')
+
+        # Dessert
+        if e_cup.get()!='0':
+            textReceipt.insert(END,f'\nCupcake\t\t\t{int(e_cup.get())*65}\n\n')
+
+        if e_donut.get()!='0':
+            textReceipt.insert(END,f'\nDounut\t\t\t{int(e_donut.get())*40}\n\n')
+
+        if e_chee.get()!='0':
+            textReceipt.insert(END,f'\nCheesecake\t\t\t{int(e_chee.get())*85}\n\n')
+
+        if e_pud.get()!='0':
+            textReceipt.insert(END,f'\nPudding\t\t\t{int(e_pud.get())*90}\n\n')
+        
+        if e_waf.get()!='0':
+            textReceipt.insert(END,f'\nWaffle\t\t\t{int(e_waf.get())*75}\n\n')
+
+        if e_cake.get()!='0':
+            textReceipt.insert(END,f'\nCake\t\t\t{int(e_cake.get())*80}\n\n')
+
+        textReceipt.insert(END,'-'*67)
+        if costofcoffeevar.get()!='0 Bath':
+            textReceipt.insert(END,f'\nCost of Coffee\t\t\t{priceofcoffee} Bath\n\n')
+        if costofteavar.get()!='0 Bath':
+            textReceipt.insert(END,f'\nCost of Tea\t\t\t{priceoftea} Bath\n\n')
+        if costofdessertvar.get()!='0 Bath':
+            textReceipt.insert(END,f'\nCost of Dessert\t\t\t{priceofdessert} Bath\n\n')
+
+        textReceipt.insert(END,f'Sub Total\t\t\t{subtotalItem} Bath\n\n')
+        textReceipt.insert(END,f'Service Tax\t\t\t{5} Bath\n\n')
+        textReceipt.insert(END,f'Total Cost\t\t\t{subtotalItem+5} Bath\n\n')
+        textReceipt.insert(END,'-'*67)
+
+    else:
+        messagebox.showerror('Error','No Item is selected')
 
 
 # -----------------------------------------------------------------------------------------
@@ -729,13 +962,12 @@ buttonRecipt = Button(buttonFrame,text='Receipt',font=('Bebas Neue',15,'bold'),b
             ,command=receipt)
 buttonRecipt.grid(row=0,column=1)
 
-buttonSave = Button(buttonFrame,text='Save',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
+buttonSave = Button(buttonFrame,text='Save',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5
+            ,command=save)
 buttonSave.grid(row=0,column=2)
 
-buttonSend = Button(buttonFrame,text='Send',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
-buttonSend.grid(row=0,column=3)
-
-buttonReset = Button(buttonFrame,text='Reset',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
+buttonReset = Button(buttonFrame,text='Reset',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5
+            ,command=reset)
 buttonReset.grid(row=0,column=4)
 
 buttonLogout = Button(buttonFrame,text='Logout',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
