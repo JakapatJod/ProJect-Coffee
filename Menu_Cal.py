@@ -3,6 +3,11 @@ from tkinter import filedialog , messagebox
 import random
 import time
 
+# Functions Logout
+def logout_page():
+    root.destroy()
+    import Signin
+
 # Functions Save
 def reset():
     
@@ -970,7 +975,8 @@ buttonReset = Button(buttonFrame,text='Reset',font=('Bebas Neue',15,'bold'),bg='
             ,command=reset)
 buttonReset.grid(row=0,column=4)
 
-buttonLogout = Button(buttonFrame,text='Logout',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5)
+buttonLogout = Button(buttonFrame,text='Logout',font=('Bebas Neue',15,'bold'),bg='dark orange',fg='black',bd=2,padx=5
+            ,command=logout_page)
 buttonLogout.grid(row=0,column=5)
 
 # -----------------------------------------------------------------------------------------
