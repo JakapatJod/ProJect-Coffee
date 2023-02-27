@@ -18,7 +18,16 @@ def login_user():
         query = 'use userdata'
         mycursor.execute(query)
         query = 'select * from data where username = %s and password= %s'
-        mycursor.execute(query,usernameEntry.get())
+        mycursor.execute(query,(usernameEntry.get(),passwordEntry.get()))
+        row = mycursor.fetchone()
+        
+        if row == None:
+            messagebox.showerror('Error','Invalid username Or password')
+
+        else:
+            messagebox.showinfo('Welcome','login is sucessful')
+            login_window.destroy()
+            import Menu_Cal
 
     
 
