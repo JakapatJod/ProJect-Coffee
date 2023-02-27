@@ -1,7 +1,9 @@
+import sqlalchemy
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
 engine = sqlalchemy.create_engine('postgresql://root:0946192332:3306/test') #11243 Database postgresSQL
+
 Base = declarative_base()
 
 class STUDENT(Base):
