@@ -19,7 +19,7 @@ def connect_database():
         messagebox.showerror('Error','Please accept Terms & Condtions')
     else:
         try:
-            con = pymysql.connect(host = "localhost" ,user = "root" ,password = "bunnapon122")
+            con = pymysql.connect(host = "localhost" ,user = "root" ,password = "Bunnapon122")
             mycursor = con.cursor()
         except:
             messagebox.showerror('Error','Database Connectivity Issue, Please Try Again')
@@ -30,7 +30,7 @@ def connect_database():
             mycursor.execute(query)
             query = 'use userdata'
             mycursor.execute(query)
-            query = 'Create table data(id int auto_increment key not null ,email varchar(50) ,username varchar(100) ,password varchar(20))'
+            query = 'Create table data(id int auto_increment key not null ,email varchar(50) ,username varchar(100) ,password varchar(20), fname varchar(40), lname varchar(40))'
             mycursor.execute(query)
             
         except:
@@ -44,8 +44,8 @@ def connect_database():
             messagebox.showerror('Error','Username Already exists')
 
         else:
-            query = 'insert into data(email,username,password) values(%s,%s,%s)'
-            mycursor.execute(query,(emailEntry.get(),userEntry.get(),passwordEntry.get()))
+            query = 'insert into data(email,username,password,fname,lname) values(%s,%s,%s,%s,%s)'
+            mycursor.execute(query,(emailEntry.get(),userEntry.get(),passwordEntry.get(),firstEntry.get(),lastEntry.get()))
             con.commit()
             con.close()
             messagebox.showinfo('Success','Registration is successful')
