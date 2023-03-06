@@ -68,7 +68,7 @@ bgLabel = Label(signup_window,image=bgImage)
 bgLabel.grid()
 
 frames = Frame(signup_window)
-frames.place(x=540,y=110)
+frames.place(x=540,y=30)
 
 
 heading = Label(frames,text='CREATE AN ACCOUNT',font=('Fc SaveSpace',40),fg='gray1')
@@ -92,31 +92,43 @@ confirmLabel.grid(row=5,column=0,sticky='w',padx=5)
 confirmEntry = Entry(frames,width=30,font=('Fc SaveSpace',25),fg='gold',bg='gray1')
 confirmEntry.grid(row=6,column=0,sticky='w',padx=5)
 
-# GOOD
+# First Name
+firstLabel = Label(frames,text='First Name',font = ('Fc SaveSpace',25),fg='gray1')
+firstLabel.grid(row=7,column=0,sticky='w',padx=5)
+firstEntry = Entry(frames,width=30,font=('Fc SaveSpace',25),fg='gold',bg='gray1')
+firstEntry.grid(row=8,column=0,sticky='w',padx=5)
+
+# Last name
+
+lastLabel = Label(frames,text='Last Name',font = ('Fc SaveSpace',25),fg='gray1')
+lastLabel.grid(row=9,column=0,sticky='w',padx=5)
+lastEntry = Entry(frames,width=30,font=('Fc SaveSpace',25),fg='gold',bg='gray1')
+lastEntry.grid(row=10,column=0,sticky='w',padx=5)
+
 # Email
 emailLabel = Label(frames,text='Email',font = ('Fc SaveSpace',25),fg='gray1')
-emailLabel.grid(row=7,column=0,sticky='w',padx=5)
+emailLabel.grid(row=11,column=0,sticky='w',padx=5)
 emailEntry = Entry(frames,width=30,font=('Fc SaveSpace',25),fg='gold',bg='gray1')
-emailEntry.grid(row=8,column=0,sticky='w',padx=5)
+emailEntry.grid(row=12,column=0,sticky='w',padx=5)
 
 check = IntVar()
 
 # terms and con
 termsandconditions = Checkbutton(frames,text='I agree to the Terms & Conditions',font=('Fc SaveSpace',22),fg='red',bg='gray1'
                     ,activebackground='white',activeforeground='gold',cursor='hand2',variable=check)
-termsandconditions.grid(row=9,column=0,pady=10)
+termsandconditions.grid(row=13,column=0,pady=10)
 
 # Button
 signupButton = Button(frames,text='SignUp',font=('Fc SaveSpace',25),bd=0,fg='white',bg='gray1',width=34,command=connect_database)
-signupButton.grid(row=10,column=0)
+signupButton.grid(row=14,column=0)
 
 # alreadyaccount
 alreadyaccount = Label(frames,text="Don't have an account ? ",font=('Fc SaveSpace',25))
-alreadyaccount.grid(row=11,column=0,sticky='w',padx=5)
+alreadyaccount.grid(row=15,column=0,sticky='w',padx=5)
 
 # Loggin button
 loginButton = Button(frames,text='Log in',font=('Fc SaveSpace',20),fg='blue',bd=0,cursor='hand2',activebackground='white' , activeforeground='blue'
                 ,command=login_page)
-loginButton.place(x=200,y=436)
+loginButton.place(x=200,y=569)
 
 signup_window.mainloop()
