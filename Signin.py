@@ -62,10 +62,10 @@ bgLabel = Label(login_window,image=bgImage)
 bgLabel.place(x=0,y=0) 
 login_window.title("Sign in")
 
-heading = Label(login_window,text='USER LOGIN',font=('Bebas Neue',40,'bold'),bg='white',fg='gray1')
+heading = Label(login_window,text='USER LOGIN',font=('Fc SaveSpace',50,'bold'),bg='white',fg='gray1')
 heading.place(x=600,y=150) # center heading
 
-usernameEntry = Entry(login_window,width=15,font=('Bebas Neue',30),bg='white',fg='gray1')
+usernameEntry = Entry(login_window,width=15,font=('Fc SaveSpace',43),bg='white',fg='gray1')
 usernameEntry.place(x=570,y=250)
 usernameEntry.insert(0,'Username')
 
@@ -73,7 +73,7 @@ usernameEntry.bind('<FocusIn>',user_enter)
 
 frame1 = Frame(login_window,width=260,height=4,bg='gold').place(x=570,y=300)
 
-passwordEntry = Entry(login_window,width=15,font=('Bebas Neue',30),bg='white',fg='gray1')
+passwordEntry = Entry(login_window,width=15,font=('Fc SaveSpace',43),bg='white',fg='gray1')
 passwordEntry.place(x=570,y=330)
 passwordEntry.insert(0,'Password')
 
@@ -85,15 +85,15 @@ openeye = PhotoImage(file='img/cl.png')
 eyeButton = Button(login_window,image=openeye,bd=0,bg='white',activebackground='white',cursor='hand2',command=hide)
 eyeButton.place(x=850,y=335)
 
-loginButton = Button(login_window,text='Login' , font=('Bebas Neue',20,'bold'),fg='white',bg='gray1',activeforeground='white',activebackground='gray1'
+loginButton = Button(login_window,text='Login' , font=('Fc SaveSpace',30,'bold'),fg='white',bg='gray1',activeforeground='white',activebackground='gray1'
                         ,cursor='hand2',bd=0,width=22,command=login_user)
-loginButton.place(x=570,y=400)
+loginButton.place(x=565,y=400)
 
-signupLabel = Label(login_window,text="Don't have an account?",font=('Bebas Neue',20),bg='white',fg='gray1')
+signupLabel = Label(login_window,text="Don't have an account?",font=('Fc SaveSpace',33),bg='white',fg='gray1')
 signupLabel.place(x=500,y=500)
 
-NewButton = Button(login_window,text='Create new one',font=('Bebas Neue',20,'underline'),bg='white',fg='gold',bd=0,activeforeground='blue'
+NewButton = Button(login_window,text='Create new one',font=('Fc SaveSpace',33,'underline'),bg='white',fg='gold',bd=0,activeforeground='blue'
                 ,activebackground='white',cursor='hand2',command=signup_page)
-NewButton.place(x=720,y=493)
+NewButton.place(x=740,y=490)
 
 login_window.mainloop()
