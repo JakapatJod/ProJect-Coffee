@@ -957,7 +957,7 @@ def receipt():
         # Coffee
         if e_esp1.get()!='0':
             textReceipt.insert(END,f'\nEspresso (HOT)\t\t\t{int(e_esp1.get())*55}\n\n')
-            textReceipt.insert(END,f'\nEspresso quantity\t\t\t{int(e_esp1.get())*1}\n\n')
+            
         
         if e_esp2.get()!='0':
             textReceipt.insert(END,f'\nEspresso (COLD)\t\t\t{int(e_esp2.get())*35}\n\n')
