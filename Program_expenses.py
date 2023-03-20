@@ -28,13 +28,13 @@ while loop_out == 'Y':
 
         while loop_item == 'Y':
             try:
+                
                 get_item_name = input("Input you cargo : ")
                 query = 'select price from stock_main where coffee_name = %s;'
                 mycursor.execute(query,(get_item_name))
                 row = mycursor.fetchone()
                 x = list(row)[0]
 
-                
                 try:
                     get_item_many = int(input("how many you buy : "))
                     sub_item_in = x*get_item_many
@@ -49,14 +49,18 @@ while loop_out == 'Y':
                 print('Invalid Input Please Check Cargo Name.')
 
     elif select_choit == 2:
+        get_many_employ = input("How Many Employee You Have ?: ")
+
+        get_many_employ = get_item_many*12000
+
+    elif select_choit == 3:
+
+        query = 'insert into expenses(all_employee_salary ,stock_salary , Date_for_pay) values(%s,%s,%s)'
+        mycursor.execute(query,(get_many_employ,sub_item,date))
+
+        print('Save Sucessfuly')
         
-
-    loop_item = input("Want to buy another cargo Key Y : ") 
-
-
-print(sub_item)
-# query = 'insert into expenses(all_employee_salary ,stock_salary , Date_for_pay) values(%s,%s,%s)'
-# mycursor.execute(query,(1000,sub_item,date))
-
+    loop_out = input("Want to do another think Key Y : ") 
+    
 con.commit()
 con.close() 

@@ -44,6 +44,6 @@ def Run_display():
     con.commit()
     con.close() 
 
-Run_display()
+
 
         
