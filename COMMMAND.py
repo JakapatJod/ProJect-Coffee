@@ -3,11 +3,11 @@ from colorama import Back , Fore , Style
 colorama.init(autoreset=True)
 
 def Run():
-    
+
     print(Back.GREEN+'='*160)
     print('')
     print(Fore.MAGENTA+'\t\t\t\t\t\t\t\t\t    STOCK')
-    print(Fore.RED+'\t\tCoffee\t\t\tPRICE\t\t\tTEA\t\t\tPRICE\t\t\tDESSERT\t\t\tPRICE')
+    print(Fore.RED+'\t\tCoffee\t\t\t\tPRICE\t\tTEA\t\t\t\tPRICE\t\t\tDESSERT\t\t\tPRICE')
     print(Fore.YELLOW+'\t\tEspresso\t\t\ts\t\tGreen Tea\t\t\ts\t\t\tCupcake\t\t\ts')
     print(Fore.YELLOW+'\t\tCappucino\t\t\ts\t\tBlack Tea\t\t\ts\t\t\tDonut\t\t\ts')
     print(Fore.YELLOW+'\t\tLatte\t\t\t\ts\t\tChocolate\t\t\ts\t\t\tCheesecake\t\ts')
