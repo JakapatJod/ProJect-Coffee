@@ -41,6 +41,9 @@ def Run_display():
     print('')
     print(Back.GREEN+'='*160)
 
+    con.commit()
+    con.close() 
+
 Run_display()
 
         
