@@ -5,7 +5,6 @@ import pymysql
 colorama.init(autoreset=True)
 
 
-
 def Run_display():
 
     import pymysql
