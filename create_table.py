@@ -20,18 +20,13 @@ try:
 
 except:
     try:
-        query = 'Create table sale(sales_id int auto_increment key not null ,username varchar(50) ,Date_for_sales varchar(100))'
+        query = 'Create table bills_and_order_detalls(Sales_id int auto_increment key not null ,Bill_number varchar(50) ,Date varchar(100), Total varchar(50))'
         mycursor.execute(query)
 
     except:
         try:
-            query = 'Create table details_of_sale(detail_id int auto_increment key not null ,total_sales varchar(100))'
+            query = 'Create table expenses(expenses_id int auto_increment key not null ,all_employee_salary varchar(50) ,stock_salary varchar(50),Date_for_pay varchar(100))'
             mycursor.execute(query)
         
         except:
-            try:
-                query = 'Create table expenses(expenses_id int auto_increment key not null ,all_employee_salary varchar(50) ,Date_for_pay varchar(100))'
-                mycursor.execute(query)
-            
-            except:
-                print('Error','You Already Create This Table')
+            print('Error','You Already Create This Table')

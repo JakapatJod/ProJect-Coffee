@@ -200,77 +200,10 @@ def Total_Cost():
         mycursor.execute(query)
 
         es_item = item1 + item2
-        ca_item = item3 + item4
-        la_item = item5 + item6
-        mo_item = item7 + item8
-        am_item = item9 + item10
-        ma_item = item11 + item12
-
-        green_item = item13+ item14
-        black_item = item15 + item16
-        choco_item = item17 + item18
-        white_item = item19 + item20
-        milk_item = item21 + item22
-        thai_item = item23 + item24
-        
-         
-    
         query = 'update stock_main set quantity =quantity - %s where coffee_name = "Espresso";'
         mycursor.execute(query,(es_item))
 
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Cappucino";'
-        mycursor.execute(query,(ca_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Latte";'
-        mycursor.execute(query,(la_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Mocha";'
-        mycursor.execute(query,(mo_item))
         
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Americano";'
-        mycursor.execute(query,(am_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Macchiato";'
-        mycursor.execute(query,(ma_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Green Tea";'
-        mycursor.execute(query,(green_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Black Tea";'
-        mycursor.execute(query,(black_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "White Chocolate";'
-        mycursor.execute(query,(choco_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "White Chocolate";'
-        mycursor.execute(query,(white_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Milk";'
-        mycursor.execute(query,(milk_item))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Thai Tea";'
-        mycursor.execute(query,(thai_item))
-        
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Cupcake";'
-        mycursor.execute(query,(item25))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Dounut";'
-        mycursor.execute(query,(item26))
-        
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Cheesecake";'
-        mycursor.execute(query,(item27))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Pudding";'
-        mycursor.execute(query,(item28))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Cake";'
-        mycursor.execute(query,(item29))
-
-        query = 'update stock_main set quantity =quantity - %s where coffee_name = "Waffle";'
-        mycursor.execute(query,(item30))
-        
-
-
 
         subquantityItem = quantityofcoffee + quantityoftea + quantityofdessert
 
@@ -957,7 +890,6 @@ def receipt():
         # Coffee
         if e_esp1.get()!='0':
             textReceipt.insert(END,f'\nEspresso (HOT)\t\t\t{int(e_esp1.get())*55}\n\n')
-            textReceipt.insert(END,f'\nEspresso quantity\t\t\t{int(e_esp1.get())*1}\n\n')
         
         if e_esp2.get()!='0':
             textReceipt.insert(END,f'\nEspresso (COLD)\t\t\t{int(e_esp2.get())*35}\n\n')

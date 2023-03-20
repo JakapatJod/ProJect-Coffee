@@ -3,13 +3,18 @@ from tkinter import messagebox
 from PIL import ImageTk
 import pymysql
 
+row = ""
+
 def login_user():
+
+    global row
+
     if usernameEntry.get()=='' or passwordEntry.get()== '':
         messagebox.showerror('Error','All Fields Are Required')
 
     else:
         try:
-            con = pymysql.connect(host = "localhost" ,user = "root" ,password = "bunnapon122")
+            con = pymysql.connect(host = "localhost" ,user = "root" ,password = "Bunnapon122")
             mycursor = con.cursor()
         except:
             messagebox.showerror('Error', 'Connection is not estaplished try again')
@@ -20,16 +25,17 @@ def login_user():
         query = 'select * from data where username = %s and password= %s'
         mycursor.execute(query,(usernameEntry.get(),passwordEntry.get()))
         row = mycursor.fetchone()
-        
+
         if row == None:
             messagebox.showerror('Error','Invalid username Or password')
 
         else:
             messagebox.showinfo('Welcome','login is sucessful')
             login_window.destroy()
+        
             import Menu_Cal
+        
 
-    
 
 def signup_page():
     login_window.destroy()
@@ -95,5 +101,6 @@ signupLabel.place(x=500,y=500)
 NewButton = Button(login_window,text='Create new one',font=('Fc SaveSpace',33,'underline'),bg='white',fg='gold',bd=0,activeforeground='blue'
                 ,activebackground='white',cursor='hand2',command=signup_page)
 NewButton.place(x=740,y=490)
+
 
 login_window.mainloop()
