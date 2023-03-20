@@ -1,5 +1,6 @@
 import pymysql
 import time
+import COMMMAND
 
 loop_item = 'Y'
 
@@ -11,6 +12,7 @@ mycursor = con.cursor()
 query = 'use userdata'
 mycursor.execute(query)
 
+COMMMAND.Run_display()
 sub_item = 0
 while loop_item == 'Y':
     try:
